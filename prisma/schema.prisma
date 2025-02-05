@@ -11,7 +11,7 @@ model Usuario {
   id         String      @id @default(auto()) @map("_id") @db.ObjectId
   email      String      @unique
   senha      String
-  transacoes Transacao[] @relation("UsuarioTransacoes")
+  
 }
 
 model Transacao {
@@ -22,6 +22,6 @@ model Transacao {
   descricao  String
   valor      Float
   data       DateTime @default(now())
-
-  usuario    Usuario  @relation(fields: [usuarioId], references: [id], name: "UsuarioTransacoes")
+  
+      
 }
