@@ -1,4 +1,4 @@
-import {criarTransacao, listarTransacoesUsuario, listrarTransacoesUsusuario} from '../models/transactionModel.js'
+import {criarTransacao, listarTransacoesUsuario} from '../models/transactionModel.js'
 
 export const adicionarTransacao = async (req,res) =>{
     const{tipo, categoria, valor} = req.body
