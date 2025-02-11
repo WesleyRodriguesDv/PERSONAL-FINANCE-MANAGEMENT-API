@@ -4,7 +4,7 @@ export const verificarToken = (req, res, next) => {
   const token = req.headers.authorization?.split(" ")[1];
 
   if (!token) {
-    return res.status(401).json({ erro: "Acesso negato. Token não fornecido" });
+    return res.status(401).json({ erro: "Acesso negado. Token não fornecido" });
   }
 
   try {

@@ -6,6 +6,6 @@ import { adicionarTransacao, listarTransacoes } from "../../controllers/transact
 const router = express.Router();
 
 router.post("/transacoes", verificarToken, validarTransacao, adicionarTransacao);
-router.get("/transacoes", verificarToken, listarTransacoes);
+router.get("/listar-transacoes", verificarToken, listarTransacoes);
 
 export default router;
