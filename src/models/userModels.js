@@ -7,3 +7,4 @@ export const criarUsuario = async (dados) => {
 export const buscarUsuarioEmail = async (email) => {
   return await prisma.usuario.findUnique({ where: { email } });
 };
+
