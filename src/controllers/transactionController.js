@@ -11,7 +11,7 @@ export const adicionarTransacao = async (req, res) =>{
 }
 
 export const listarTransacoes = async (req,res) =>{
-    const transacoes = await listarTransacoes(usuarioId)
+    const transacoes = await listarTransacoesUsuario(usuarioId)
     res.json(transacoes)
 
 }

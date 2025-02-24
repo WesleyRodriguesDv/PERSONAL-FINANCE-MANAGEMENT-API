@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken'
 
 export const verificarToken = (req,res, next) =>{
-  token = req.headers.authorization?.split(" ")[1];
+  const token = req.headers.authorization?.split(" ")[1];
 
   if (!token) {
     return res.status(401).json({erro: "Acesso negado, token não fornecido"})
