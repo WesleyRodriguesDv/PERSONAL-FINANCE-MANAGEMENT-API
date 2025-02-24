@@ -7,7 +7,7 @@ export const cadastrarUsuario = async (req, res) =>{
   const {email, senha} = req.body
 
   const usuarioExistente = await buscarUsuarioEmail(email)
-  if (buscarUsuarioEmail) {
+  if (usuarioExistente) {
     return res.status(400).json({erro: "email já cadastrado"})
   }
 
@@ -19,8 +19,8 @@ export const cadastrarUsuario = async (req, res) =>{
 export const loginUsuario = async (req,res) =>{
   const {email, senha} = req.body
 
-  const usuario = buscarUsuarioEmail(email)
-  if (!usuario || !(bcrypt.compare(senha, usuario.senha))) {
+  const usuario = await buscarUsuarioEmail(email)
+  if (!usuario || !(await bcrypt.compare(senha, usuario.senha))) {
     return res.status(400).json({erro: "email ou senha incorretos"})
   }
 
