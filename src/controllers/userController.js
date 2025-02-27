@@ -2,6 +2,7 @@
 import jwt from "jsonwebtoken" 
 import bcrypt from "bcrypt"
 import { criarUsuario, buscarUsuarioEmail } from "../models/userModels.js"
+import { obterSaldo } from "../models/transactionModel.js"
 
 export const cadastrarUsuario = async (req, res) =>{
   const {email, senha} = req.body
@@ -24,6 +25,16 @@ export const loginUsuario = async (req,res) =>{
     return res.status(400).json({erro: "email ou senha incorretos"})
   }
 
-  const token = jwt.sign({id: usuario.id}, process.env.JWT_SECRET, {expiresIn:'1h'})
-  res.json({token})
+  const token = jwt.sign({id: usuario.id}, process.env.JWT_SECRET, {expiresIn: "1h"})
+  const saldo = await obterSaldo(usuario.id)
+  res.status(201).json({token, saldo})
+
+  
+  
 }
+
+
+
+
+
+
