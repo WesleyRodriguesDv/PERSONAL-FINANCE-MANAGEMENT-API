@@ -3,8 +3,8 @@
 A API foi construída com Node.js, Express, Prisma e MongoDB, seguindo boas práticas de organização de código e arquitetura.
 
 🚀 Funcionalidades
-Cadastro de usuários: Criação de novos usuários com email e senha.
 
+Cadastro de usuários: Criação de novos usuários com email e senha.
 ![image](https://github.com/user-attachments/assets/3f06edae-afc8-4806-88b4-ddf34fb50d74)
 
 Login de usuários: Autenticação via JWT (JSON Web Token). O usuário também recebe a informação do seu saldo atual, atualizado com as últimas transações realizadas.
@@ -23,8 +23,7 @@ de dados ocorrências como duplicidade.
 ![image](https://github.com/user-attachments/assets/c024ec54-896b-4263-96fc-ad882b3314f5)
 
 
-Transações
-Cadastro de transações: Registro de transações com tipo (receita/despesa), categoria, valor e data.
+Transações: Registro de transações com tipo (receita/despesa), categoria, valor e data.
 ![image](https://github.com/user-attachments/assets/7b26f03a-0e8b-49c8-ab2e-44a7f3c1f9d8)
 
 
