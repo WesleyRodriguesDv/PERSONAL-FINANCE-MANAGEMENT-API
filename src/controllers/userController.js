@@ -28,8 +28,6 @@ export const loginUsuario = async (req,res) =>{
   const token = jwt.sign({id: usuario.id}, process.env.JWT_SECRET, {expiresIn: "1h"})
   const saldo = await obterSaldo(usuario.id)
   res.status(201).json({token, saldo})
-
-  
   
 }
 

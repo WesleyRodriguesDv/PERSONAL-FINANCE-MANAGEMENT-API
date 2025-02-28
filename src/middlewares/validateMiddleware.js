@@ -1,3 +1,5 @@
+import { criarTransacao } from "../models/transactionModel.js";
+
 export const validarCadastro = (req, res, next) => {
   const { email, senha } = req.body;
   if (!email || !senha) {
@@ -18,4 +20,13 @@ export const validarTransacao = (req, res, next) => {
   next();
 };
 
+
+export const adicionarTransacao = async (req, res) =>{
+  const {tipo, categoria, valor, descricao} = req.body
+
+  const usuarioId = req.usuarioId
+
+  const transacao = await criarTransacao({tipo, categoria, valor, descricao, usuarioId})
+
+}
 
