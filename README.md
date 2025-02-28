@@ -1,4 +1,5 @@
-📊 API para Gerenciamento de Finanças Pessoais 
+📊 API para Gerenciamento de Finanças Pessoais.
+
 A API foi construída com Node.js, Express, Prisma e MongoDB, seguindo boas práticas de organização de código e arquitetura.
 
 🚀 Funcionalidades
