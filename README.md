@@ -3,11 +3,11 @@ A API foi construída com Node.js, Express, Prisma e MongoDB, seguindo boas prá
 
 🚀 Funcionalidades
 Cadastro de usuários: Criação de novos usuários com email e senha.
+
 ![image](https://github.com/user-attachments/assets/3f06edae-afc8-4806-88b4-ddf34fb50d74)
--------------------------------------------------------------------------------------------
--------------------------------------------------------------------------------------------
 
 Login de usuários: Autenticação via JWT (JSON Web Token). O usuário também recebe a informação do seu saldo atual, atualizado com as últimas transações realizadas.
+
 ![image](https://github.com/user-attachments/assets/b7da3b78-2536-490a-b4e1-5fbc3588037d)
 
 ![image](https://github.com/user-attachments/assets/2fb6f6e3-733f-46b1-8930-77158c1cd92e)
