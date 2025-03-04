@@ -13,8 +13,9 @@ Assim que o login é autorizado, o usuário recebe um token de autenticação vi
 
 ### 🪙 Trasações
 As transações são estruturadas com tipo, categoria, valor e descrição, sendo este último não obrigatório. O tipo é obrigatoriamente "Receita" ou "Despesa".
-Exemplo de uma Transação: 
 ```bash
+Exemplo de uma Transação: 
+
 tipo: Despesa
 categoria: Entretenimento 
 valor: -R$ 60,00
