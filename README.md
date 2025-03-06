@@ -3,7 +3,7 @@
 ## 📄 Descriçao
 A API serve como um gerenciador financeiro onde é possível adicionar receitas e despesas. A partir desses dados, temos o saldo atual, extrato de todas as transações com visualização das mais recentes primeiro. Para acessar, o usuário deve criar um cadastro e fazer login.
 
-## 📳 Funcionalidades
+## 🚀 Funcionalidades
 
 ### Cadastro e Login
 O cadastro de usuários passa por uma validação de consistência dos dados, seguido por uma verificação no banco de dados afim de evitar dados já existentes ou duplicidade.
@@ -21,3 +21,7 @@ categoria: Entretenimento
 valor: R$ -60,00
 descrição: McDonald's 
 ```
+
+### 🧾 Extrato e Saldo
+O usuário tem a opção de visualizar o extrato de transações efetuadas bem como o saldo atual. Para ter acesso ao Extrato o sistema busca o usuarioId do usuário já autenticado e consulta no banco de dados as transações efetuadas pelo mesmo.
+
