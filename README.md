@@ -61,8 +61,8 @@ A API permite que usuários gerenciem suas finanças pessoais, incluindo:
    http://localhost:3000/cadastro
    ```
    
-   - POST
-   ```bash
+  
+   ```bash POST 
    http://localhost:3000/login
    ```
 
