@@ -9,7 +9,7 @@ A API serve como um gerenciador financeiro onde é possível adicionar receitas 
 ## 🚀 Funcionalidades
 
    - Cadastro
-      O cadastro de usuários passa por uma validação de consistência dos dados, seguido por uma verificação no banco de dados afim de evitar dados já existentes ou duplicidade.
+     O cadastro de usuários passa por uma validação de consistência dos dados, seguido por uma verificação no banco de dados afim de evitar dados já existentes ou duplicidade.
    
    - Login
       Após o cadastro bem sucedido, o usuário está apto à fazer login. Novamente os dados inseridos passam por uma validação de consistência e existência, retornando a todo momento possíveis erros. 
