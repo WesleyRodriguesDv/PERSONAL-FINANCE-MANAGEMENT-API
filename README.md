@@ -1,7 +1,11 @@
 # API DE GERENCIAMENTO DE FINANÇAS PESSOAIS
 
+---
+
 ## 📄 Descriçao
 A API serve como um gerenciador financeiro onde é possível adicionar receitas e despesas. A partir desses dados, temos o saldo atual, extrato de todas as transações com visualização das mais recentes primeiro. Para acessar, o usuário deve criar um cadastro e fazer login.
+
+---
 
 ## 🚀 Funcionalidades
 
