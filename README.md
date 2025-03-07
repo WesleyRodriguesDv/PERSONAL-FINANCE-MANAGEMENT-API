@@ -28,4 +28,17 @@ A API permite que usuários gerenciem suas finanças pessoais, incluindo:
    ```bash
    git clone https://github.com/FinanceControlProject/Backend
    cd api-financeira
+   
+2. **Configure o ambiente**
+   *Crie um arquivo .env na raiz do projeto e adicione as variáveis de ambiente:*
+   ```bash
+   DATABASE_URL=mongodb+srv://wesleydev:sd46asd85@financeproject.vttwa.mongodb.net/FinanceProject?retryWrites=true&w=majority&appName=FinanceProject
+   JWT_SECRET = 48bec4dada39465c0c46d34e58862291d63544fbafdbe216c52e48b8d8965a22
 
+3. **Gere o PrismaClient**
+   ```bash
+   npx prisma generate
+
+4. **Inicie o servidor**
+   ```bash
+   node src/server.js
