@@ -18,38 +18,6 @@ A API permite que usuários gerenciem suas finanças pessoais, incluindo:
 ## 📂 Estrutura do Projeto
 
 A estrutura do projeto foi organizada para facilitar a manutenção e escalabilidade:
-/api-financeira
-│
-├── /prisma
-│   └── schema.prisma         # Configuração do Prisma
-│
-├── /src
-│   ├── /config
-│   │   └── prismaClient.js   # Conexão com o Prisma
-│   │
-│   ├── /middlewares
-│   │   ├── authMiddleware.js   # Middleware para autenticação JWT
-│   │   └── validateMiddleware.js # Middleware para validação de dados
-│   │
-│   ├── /models
-│   │   ├── userModel.js        # Métodos para usuário
-│   │   └── transactionModel.js # Métodos para transações
-│   │
-│   ├── /controllers
-│   │   ├── userController.js      # Cadastro e login
-│   │   └── transactionController.js # Gerenciamento de transações
-│   │
-│   ├── /routes
-│   │   ├── /public
-│   │   │   └── userRoutes.js      # Rotas públicas (cadastro/login)
-│   │   │
-│   │   └── /private
-│   │       └── transactionRoutes.js # Rotas privadas (transações)
-│   │
-│   ├── app.js                # Configuração do Express
-│   └── server.js             # Inicialização do servidor
-│
-├── .env                      # Variáveis de ambiente
-├── package.json              # Dependências do projeto
-└── README.md                 # Documentação do projeto
+![image](https://github.com/user-attachments/assets/4cdaf25f-9bcf-4a1c-9d03-f86c07e61dd1)
+
 
