@@ -16,7 +16,7 @@ A API serve como um gerenciador financeiro onde é possível adicionar receitas 
    - 💰 Trasações <br>
       As transações são estruturadas com tipo, categoria, valor e descrição, sendo este último não obrigatório. O tipo é obrigatoriamente "Receita" ou "Despesa".
 
-      - Exemplo de uma Transação: 
+      - Ex: 
          ```bash
          tipo: Despesa
          categoria: Entretenimento 
