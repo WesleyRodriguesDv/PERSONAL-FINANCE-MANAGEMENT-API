@@ -8,7 +8,7 @@ A API serve como um gerenciador financeiro onde é possível adicionar receitas 
 
 ## 🚀 Funcionalidades
 
-   - Cadastro
+   - Cadastro <br>
      O cadastro de usuários passa por uma validação de consistência dos dados, seguido por uma verificação no banco de dados afim de evitar dados já existentes ou duplicidade.
    
    - Login
