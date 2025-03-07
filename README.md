@@ -54,17 +54,14 @@ A API permite que usuários gerenciem suas finanças pessoais, incluindo:
 
 ---
 
-##Methods:
-- USER ROUTES (Public)
-   - POST
-   ```bash
-   http://localhost:3000/cadastro
-   ```
-   
-  
-   ```bash POST 
-   http://localhost:3000/login
-   ```
+##Methods & Endpoints API
+```bash
+POST /cadastro - Cria um novo usuário
+POST /login - Efetua login e autentica o usuário
+POST /transacoes - Adiciona uma transação de receita ou despesa
+GET /listar-transacoes - Acessa o extrato das transações
+```
+
 
 
    
