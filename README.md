@@ -64,6 +64,7 @@ A API permite que usuários gerenciem suas finanças pessoais, incluindo:
    - POST
    ```bash
    http://localhost:3000/login
+   ```
 
 
    
