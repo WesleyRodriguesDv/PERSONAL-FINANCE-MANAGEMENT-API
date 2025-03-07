@@ -27,7 +27,7 @@ A API serve como um gerenciador financeiro onde é possível adicionar receitas 
 
 ---
 
-## 🚀 Visão Geral
+## 🔍 Visão Geral
 
 A API permite que usuários gerenciem suas finanças pessoais, incluindo:
 
@@ -72,7 +72,7 @@ A API permite que usuários gerenciem suas finanças pessoais, incluindo:
    node src/server.js
 
 7. **Acesse a API**
-- A API estará disponével em
+- A API estará disponível em
    ```bash
    http://localhost:3000
 
