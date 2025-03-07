@@ -54,7 +54,7 @@ A API permite que usuários gerenciem suas finanças pessoais, incluindo:
 
 ---
 
-##Methods & Endpoints API
+## Methods & Endpoints API
 ```bash
 POST /cadastro - Cria um novo usuário
 POST /login - Efetua login e autentica o usuário
