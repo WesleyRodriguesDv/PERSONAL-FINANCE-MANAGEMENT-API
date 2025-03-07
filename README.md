@@ -18,5 +18,30 @@ A API permite que usuários gerenciem suas finanças pessoais, incluindo:
 ## 📂 Estrutura do Projeto
 
 A estrutura do projeto foi organizada para facilitar a manutenção e escalabilidade:
+- **/prisma**
+  - `schema.prisma`
+- **/src**
+  - **/config**
+    - `prismaClient.js`
+  - **/middlewares**
+    - `authMiddleware.js`
+    - `validateMiddleware.js`
+  - **/models**
+    - `userModel.js`
+    - `transactionModel.js`
+  - **/controllers**
+    - `userController.js`
+    - `transactionController.js`
+  - **/routes**
+    - **/public**
+      - `userRoutes.js`
+    - **/private**
+      - `transactionRoutes.js`
+  - `app.js`
+  - `server.js`
+- **Arquivos na Raiz**
+  - `.env`
+  - `package.json`
+  - `README.md`
 
 
