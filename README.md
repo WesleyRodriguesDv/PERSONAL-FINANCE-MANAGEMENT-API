@@ -15,10 +15,17 @@ A API permite que usuários gerenciem suas finanças pessoais, incluindo:
 
 ---
 
-## 📂 Estrutura do Projeto
+## 🔧 Como Executar o Projeto
 
-A estrutura do projeto foi organizada para facilitar a manutenção e escalabilidade:
----
-![image](https://github.com/user-attachments/assets/4cdaf25f-9bcf-4a1c-9d03-f86c07e61dd1)
+### **Pré-requisitos**
+- Node.js (v16 ou superior)
+- MongoDB (local ou remoto)
+- Prisma CLI
 
+### **Passos para Execução**
+
+1. **Clone o repositório**:
+   ```bash
+   git clone https://github.com/FinanceControlProject/Backend
+   cd api-financeira
 
