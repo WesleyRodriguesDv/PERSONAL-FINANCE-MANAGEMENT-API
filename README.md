@@ -12,7 +12,7 @@ Após o cadastro bem sucedido, o usuário está apto à fazer login. Novamente o
 Assim que o login é autorizado, o usuário é autenticado via JWT. O saldo atual do usuário é exibido após o login, se não houver transações o saldo é zero.
 
 
-### 🪙 Trasações
+### 💰 Trasações
 As transações são estruturadas com tipo, categoria, valor e descrição, sendo este último não obrigatório. O tipo é obrigatoriamente "Receita" ou "Despesa".
 
 #### Exemplo de uma Transação: 
