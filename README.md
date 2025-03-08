@@ -1,19 +1,19 @@
 
 # API DE GERENCIAMENTO DE FINANÇAS PESSOAIS
 
-## 📄 Descriçao
-A API serve como um gerenciador financeiro onde é possível adicionar receitas e despesas. A partir desses dados, temos o saldo atual, extrato de todas as transações com visualização das mais recentes primeiro. Para acessar, o usuário deve criar um cadastro e fazer login.
+## 📄 Description
+The API serves as a financial manager where users can add income and expenses. Based on this data, the current balance is calculated, and a statement of all transactions is available, displaying the most recent ones first. To access the system, users must create an account and log in.
 
-## 🚀 Funcionalidades
+## 🚀 Features
 
-   - 👤 Cadastro <br>
-     O cadastro de usuários passa por uma validação de consistência dos dados, seguido por uma verificação no banco de dados afim de evitar dados já existentes ou duplicidade.
-   
+   - 👤 User Registration <br>
+      User registration undergoes data consistency validation, followed by a database check to prevent duplicate or existing records.
+        
    - ✅👤 Login <br>
-      Após o cadastro bem sucedido, o usuário está apto à fazer login. Novamente os dados inseridos passam por uma validação de consistência e existência, retornando a todo momento possíveis erros.Assim que o login é autorizado, o usuário é autenticado via JWT. O saldo atual do usuário é exibido após o login, se não houver transações o saldo é zero.
+      After successful registration, users can log in. The provided data is validated for consistency and existence, returning potential errors when applicable. Once login is authorized, the user is authenticated via JWT. The current balance is displayed upon login, which is zero if no transactions exist.
 
-   - 💰 Trasações <br>
-      As transações são estruturadas com tipo, categoria, valor e descrição, sendo este último não obrigatório. O tipo é obrigatoriamente "Receita" ou "Despesa".
+   - 💰 Transactions <br>
+     Transactions are structured with a type, category, amount, and an optional description. The type must be either "Income" or "Expense."
 
       - Ex: 
          ```bash
@@ -22,57 +22,57 @@ A API serve como um gerenciador financeiro onde é possível adicionar receitas 
          valor: R$ -60,00
          descrição: McDonald's 
          ```
-   - 🧾 Extrato e Saldo <br>
-      O usuário tem a opção de visualizar o extrato de transações efetuadas bem como o saldo atual. Para ter acesso ao Extrato o sistema busca o usuarioId do usuário já autenticado e consulta no banco de dados as transações efetuadas pelo mesmo.
+   - 🧾 Statement and Balance <br>
+      Users can view their transaction history as well as their current balance. To access the statement, the system retrieves the authenticated user’s userId and queries the database for transactions linked to the account.
 
 ---
 
-## 🔍 Visão Geral
+## 🔍 Overview
 
-A API permite que usuários gerenciem suas finanças pessoais, incluindo:
+The API enables users to manage their personal finances, including:
 
-- **Cadastro e autenticação de usuários**.
-- **Registro de transações** (receitas e despesas).
-- **Consulta de extrato financeiro**.
-- **Validação de dados** para garantir consistência e segurança.
+- **User registration and authentication**.
+- **Transaction logging (income and expenses).**
+- **Financial statement retrieval**.
+- **Data validation to ensure consistency and security**
 
 ---
 
-## 🔧 Como Executar o Projeto
+## 🔧 How to Run the Project
 
 ### **Pré-requisitos**
-- Node.js (v16 ou superior)
-- MongoDB (local ou remoto)
+- Node.js (v16 or later)
+- MongoDB (local or remote)
 - Prisma CLI
 
-### **Passos para Execução**
+### **Execution Steps**
 
-1. **Clone o repositório**:
+1. **Clone the repository:**:
    ```bash
    git clone https://github.com/FinanceControlProject/Backend
    cd api-financeira
 
-2. **Instale as dependências**
+2. **Install dependencies**
    ```bash
    npm install
    
-3. **Configure o ambiente** <br>
-- Crie um arquivo .env na raiz do projeto e adicione as variáveis de ambiente:
+3. **Set up the environment** <br>
+- Create a .env file in the project's root directory and add the environment variables
    ```bash
    DATABASE_URL="mongodb://localhost:27017/api-financeira"
      JWT_SECRET="sua chave secreta"
      PORT=3000
 
-5. **Gere o PrismaClient**
+5. **Generate PrismaClient**
    ```bash
    npx prisma generate
 
-6. **Inicie o servidor**
+6. **Start the server**
    ```bash
    node src/server.js
 
-7. **Acesse a API**
-- A API estará disponível em
+7. **Access the API**
+- The API will be available at:
    ```bash
    http://localhost:3000
 
@@ -80,10 +80,10 @@ A API permite que usuários gerenciem suas finanças pessoais, incluindo:
 
 ## Methods & Endpoints API
 ```bash
-POST /cadastro - Cria um novo usuário
-POST /login - Efetua login e autentica o usuário
-POST /transacoes - Adiciona uma transação de receita ou despesa
-GET /listar-transacoes - Acessa o extrato das transações
+POST /register - Creates a new user  
+POST /login - Logs in and authenticates the user  
+POST /transactions - Adds an income or expense transaction  
+GET /list-transactions - Retrieves the transaction statement 
 ```
 
 
