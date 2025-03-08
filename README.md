@@ -81,7 +81,7 @@ The API enables users to manage their personal finances, including:
 ## Methods & Endpoints API
 ```bash
 POST /register - Creates a new user  
-POST /login - Logs in and authenticates the user  
+POST /login - Log in and authenticates the user  
 POST /transactions - Adds an income or expense transaction  
 GET /list-transactions - Retrieves the transaction statement 
 ```
