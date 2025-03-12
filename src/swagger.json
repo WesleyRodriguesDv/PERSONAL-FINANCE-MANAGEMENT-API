@@ -1,0 +1,140 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "API de gerenciamento de finanças pessoais",
+        "description": "Essa API tem como objetivo gerenciar receitas e despesas",
+        "contact": {
+            "email": "wesleyrodriiguesdev@gmail.com"
+        },
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/cadastro": {
+            "post": {
+                "summary": "Cadastro de usuário",
+                "description": "Essa rota é responsável por cadastrar um novo usuário",
+                "tags": ["Cadastro"],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Cadastro"
+                            },
+                            "examples": {
+                                "cadastro": {
+                                    "summary": "Exemplo de cadastro",
+                                    "value": {
+                                        "email": "wesley-teste123@gmail.com",
+                                        "senha": "123456"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "description": "Erro ao cadastrar usuário. Possíveis motivos: Email já cadastrado ou campos obrigatórios não preenchidos.",
+                        "content": {
+                            "application/json": {
+                                "examples": {
+                                    "emailJaCadastrado": {
+                                        "summary": "Email já cadastrado",
+                                        "value": { "erro": "email já cadastrado" }
+                                    },
+                                    "camposObrigatorios": {
+                                        "summary": "Campos Obrigatórios",
+                                        "value": { "erro": "Todos os campos são obrigatórios" }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "201": {
+                        "description": "Usuário cadastrado com sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Cadastro"
+                                },
+                                "example": {
+                                    "message": "usuário criado com sucesso! "
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/login": {
+            "post": {
+                "summary": "Login do usuário",
+                "description": "Essa rota é responsável pelo login e autenticação do usuário",
+                "tags": ["Login"],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Login"
+                            },
+                            "examples": {
+                                "login": {
+                                    "summary": "Exemplo de Login",
+                                    "value": {
+                                        "email": "wesley-teste123@gmail.com",
+                                        "senha": "123456"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "description": "Email ou senha incorretos",
+                        "content": {
+                            "application/json": {
+                                "examples": {
+                                    "dadosIncorretos": {
+                                        "summary": "Email ou senha incorretos",
+                                        "value": { "erro": "email ou senha incorretos" }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "201": {
+                        "description": "Login realizado com sucesso"
+                    }
+                }
+            }
+        }
+    },
+     "components": {
+        "schemas": {
+            "Cadastro": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "type": "string"
+                    },
+                    "senha": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Login": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "type": "string"
+                    },
+                    "senha": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}
