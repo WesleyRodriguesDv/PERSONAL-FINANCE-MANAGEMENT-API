@@ -85,6 +85,17 @@ POST /login - Logs in and authenticates the user
 POST /transactions - Adds an income or expense transaction  
 GET /list-transactions - Retrieves the transaction statement 
 ```
+---
+#### Future Updates:
+ - Spending percentage by category.
+ - Future spending projection based on behavior.
+Financial Goals and Planning:
+ - Artificial Intelligence to notify possible security measures and advice, acting in the protection and appreciation of the user's capital, such as:
+   - alerts of balance below the planned limit;
+   - advice on possible unnecessary expenses;
+   - profitable investment tips.
+
+
 
 
 
