@@ -24,8 +24,8 @@
                                 "cadastro": {
                                     "summary": "Exemplo de cadastro",
                                     "value": {
-                                        "email": "wesley-teste123@gmail.com",
-                                        "senha": "123456"
+                                        "email": "string",
+                                        "senha": "string"
                                     }
                                 }
                             }
@@ -82,8 +82,8 @@
                                 "login": {
                                     "summary": "Exemplo de Login",
                                     "value": {
-                                        "email": "wesley-teste123@gmail.com",
-                                        "senha": "123456"
+                                        "email": "string",
+                                        "senha": "string"
                                     }
                                 }
                             }
@@ -109,7 +109,106 @@
                     }
                 }
             }
-        }
+        },
+        "/transacoes": {
+            "post": {
+                "summary": "Transações",
+                "description": "Essa rota é responsável por realizar transações de receitas e despesas",
+                "tags": ["Transacoes"],
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Transacao"
+                            },
+                            "examples": {
+                                "transacao": {
+                                    "summary": "Exemplo de Transação",
+                                    "value": {
+                                        "tipo": "despesa",
+                                        "categoria": "Lazer",
+                                        "descricao": "McDonald's",
+                                        "valor": -60
+                                      }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "401": {
+                        "description": "Token inválido, não fornecido ou expirado",
+                        "content": {
+                            "application/json": {
+                                "examples": {
+                                    "tokenInválido": {
+                                        "summary": "Token inválido, não fornecido ou expirado",
+                                        "value": { "erro": "Acesso negado, token não fornecido"}
+                                    },
+                                    "tokenExpirado": {
+                                        "summary": "Token inválido ou expirado",
+                                        "value": { "erro": "Token inválido ou expirado"}
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "201": {
+                        "description": "Transação registrada com sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Transacoes"
+                                },
+                                "example": {
+                                    "message": "Transação confirmada!"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "listar-transacoes": {
+            "get": {
+                "summary": "Extrato de transações",
+                "description": "Essa rota é responsável por exibir o extrato de transações do usuário",
+                "tags": ["Registro de transações"],
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "parameters": [{
+                    "name": "usuarioId",
+                    "in": "req.usuarioId",
+                    "description": "Id do usuário",
+                    "required": "true"
+            }]        
+                },
+                "responses": {
+                    "200": {
+                        "description": "Extrato exibido com sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Transacao"
+                                },
+                                "example": {
+                                    "message": "Extrato"
+                                }
+                            }
+                        }
+                    }
+                }
+        
     },
      "components": {
         "schemas": {
@@ -134,6 +233,41 @@
                         "type": "string"
                     }
                 }
+            },
+            "Transacao": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "usuarioId" : {
+                        "type": "string"
+                    },
+                    "tipo": {
+                        "type": "string"
+                    },
+                    "categoria": {
+                        "type": "string"
+                    },
+                    "descricao": {
+                        "type": "string"
+                    },
+                    "valor": {
+                        "type": "float"    
+                    },
+                    "data": {
+                        "type": "dateTime"
+                    }
+                }
+            
+            
+                }
+            }
+        },
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "scheme": "bearer"
             }
         }
     }
