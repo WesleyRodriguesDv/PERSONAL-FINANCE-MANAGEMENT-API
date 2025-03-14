@@ -13,7 +13,9 @@
             "post": {
                 "summary": "Cadastro de usuário",
                 "description": "Essa rota é responsável por cadastrar um novo usuário",
-                "tags": ["Cadastro"],
+                "tags": [
+                    "Cadastro"
+                ],
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -40,11 +42,15 @@
                                 "examples": {
                                     "emailJaCadastrado": {
                                         "summary": "Email já cadastrado",
-                                        "value": { "erro": "email já cadastrado" }
+                                        "value": {
+                                            "erro": "email já cadastrado"
+                                        }
                                     },
                                     "camposObrigatorios": {
                                         "summary": "Campos Obrigatórios",
-                                        "value": { "erro": "Todos os campos são obrigatórios" }
+                                        "value": {
+                                            "erro": "Todos os campos são obrigatórios"
+                                        }
                                     }
                                 }
                             }
@@ -55,7 +61,6 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "type": "object",
                                     "$ref": "#/components/schemas/Cadastro"
                                 },
                                 "example": {
@@ -71,7 +76,9 @@
             "post": {
                 "summary": "Login do usuário",
                 "description": "Essa rota é responsável pelo login e autenticação do usuário",
-                "tags": ["Login"],
+                "tags": [
+                    "Login"
+                ],
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -98,7 +105,9 @@
                                 "examples": {
                                     "dadosIncorretos": {
                                         "summary": "Email ou senha incorretos",
-                                        "value": { "erro": "email ou senha incorretos" }
+                                        "value": {
+                                            "erro": "email ou senha incorretos"
+                                        }
                                     }
                                 }
                             }
@@ -112,9 +121,11 @@
         },
         "/transacoes": {
             "post": {
-                "summary": "Transações",
+                "summary": "Registrar Transações",
                 "description": "Essa rota é responsável por realizar transações de receitas e despesas",
-                "tags": ["Transacoes"],
+                "tags": [
+                    "Transacoes"
+                ],
                 "security": [
                     {
                         "bearerAuth": []
@@ -134,7 +145,7 @@
                                         "categoria": "Lazer",
                                         "descricao": "McDonald's",
                                         "valor": -60
-                                      }
+                                    }
                                 }
                             }
                         }
@@ -148,11 +159,15 @@
                                 "examples": {
                                     "tokenInválido": {
                                         "summary": "Token inválido, não fornecido ou expirado",
-                                        "value": { "erro": "Acesso negado, token não fornecido"}
+                                        "value": {
+                                            "erro": "Acesso negado, token não fornecido"
+                                        }
                                     },
                                     "tokenExpirado": {
                                         "summary": "Token inválido ou expirado",
-                                        "value": { "erro": "Token inválido ou expirado"}
+                                        "value": {
+                                            "erro": "Token inválido ou expirado"
+                                        }
                                     }
                                 }
                             }
@@ -163,8 +178,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "$ref": "#/components/schemas/Transacoes"
+                                    "$ref": "#/components/schemas/Transacao"
                                 },
                                 "example": {
                                     "message": "Transação confirmada!"
@@ -175,42 +189,68 @@
                 }
             }
         },
-        "listar-transacoes": {
+        "/listar-transacoes": {
             "get": {
                 "summary": "Extrato de transações",
                 "description": "Essa rota é responsável por exibir o extrato de transações do usuário",
-                "tags": ["Registro de transações"],
+                "tags": [
+                    "Registro de transações"
+                ],
                 "security": [
                     {
                         "bearerAuth": []
                     }
                 ],
-                "parameters": [{
-                    "name": "usuarioId",
-                    "in": "req.usuarioId",
-                    "description": "Id do usuário",
-                    "required": "true"
-            }]        
-                },
+                "parameters": [
+                    {
+                        "name": "usuarioId",
+                        "in": "query",
+                        "description": "Id do usuário",
+                        "required": true,
+                        "schema":{
+                            "type": "string"
+                        }
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "Extrato exibido com sucesso",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "$ref": "#/components/schemas/Transacao"
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Transacao"
+                                    }
                                 },
-                                "example": {
-                                    "message": "Extrato"
-                                }
+                                "example": [
+                                  {
+                                    "id": "id_da_transacao",
+                                    "usuarioId": "id_do_usuario",
+                                    "tipo": "despesa",
+                                    "categoria": "Lazer",
+                                    "descricao": "McDonald's",
+                                    "valor": -60,
+                                    "data": "2023-11-22T10:00:00Z"
+                                  },
+                                    {
+                                    "id": "id_da_transacao_2",
+                                    "usuarioId": "id_do_usuario",
+                                    "tipo": "receita",
+                                    "categoria": "Salario",
+                                    "descricao": "Salario mes de Novembro",
+                                    "valor": 3000,
+                                    "data": "2023-11-23T10:00:00Z"
+                                  }
+                                ]
                             }
                         }
                     }
                 }
-        
+            }
+        }
     },
-     "components": {
+    "components": {
         "schemas": {
             "Cadastro": {
                 "type": "object",
@@ -240,7 +280,7 @@
                     "id": {
                         "type": "string"
                     },
-                    "usuarioId" : {
+                    "usuarioId": {
                         "type": "string"
                     },
                     "tipo": {
@@ -253,21 +293,21 @@
                         "type": "string"
                     },
                     "valor": {
-                        "type": "float"    
+                        "type": "number",
+                        "format": "float"
                     },
                     "data": {
-                        "type": "dateTime"
+                        "type": "string",
+                        "format": "date-time"
                     }
-                }
-            
-            
                 }
             }
         },
         "securitySchemes": {
             "bearerAuth": {
                 "type": "http",
-                "scheme": "bearer"
+                "scheme": "bearer",
+                "bearerFormat": "JWT"
             }
         }
     }
