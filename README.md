@@ -8,7 +8,7 @@ The API serves as a financial manager where users can add income and expenses. B
 
    - 👤 User Registration <br>
       User registration undergoes data consistency validation, followed by a database check to prevent duplicate or existing records.
-        
+   
    - ✅👤 Login <br>
       After successful registration, users can log in. The provided data is validated for consistency and existence, returning potential errors when applicable. Once login is authorized, the user is authenticated via JWT. The current balance is displayed upon login, which is zero if no transactions exist.
 
