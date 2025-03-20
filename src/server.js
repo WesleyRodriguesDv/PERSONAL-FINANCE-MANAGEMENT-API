@@ -19,5 +19,6 @@ const doc = "http://localhost:3000/api-docs/#/"
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`), (`Documentação disponível em ${doc} `);
+  console.log(`Servidor rodando na porta ${PORT}`);
+  console.log(`Documentação disponível em ${doc}`);
 });
