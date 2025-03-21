@@ -41,9 +41,7 @@ The API enables users to manage their personal finances, including:
 ## 🔧 How to Run the Project
 
 ### **Pré-requisitos**
-- Node.js (v16 or later)
-- MongoDB (local or remote)
-- Prisma CLI
+- Docker Desktop 
 
 ### **Execution Steps**
 
@@ -54,7 +52,10 @@ The API enables users to manage their personal finances, including:
 
 2. **Install and open Docker Desktop**
    
-3. **Set up the environment** <br>
+3. **In the terminal, paste the code to run the API server:**:
+   ```bash
+   docker run -p 3000:3000 api/wallet:v1.0 <br>
+
 
 ---
 
