@@ -45,16 +45,16 @@ The API enables users to manage their personal finances, including:
 
 ### **Execution Steps**
 
-1. **Clone the repository:**:
+1. **Clone the repository:**
    ```bash
    git clone https://github.com/FinanceControlProject/Backend
    cd api-financeira
 
 2. **Install and open Docker Desktop**
    
-3. **In the terminal, paste the code to run the API server:**:
+3. **In the terminal, paste the code to run the API server:**
    ```bash
-   docker run -p 3000:3000 api/wallet:v1.0 <br>
+   docker run -p 3000:3000 api/wallet:v1.0
 
 
 ---
