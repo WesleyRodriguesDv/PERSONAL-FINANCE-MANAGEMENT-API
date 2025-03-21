@@ -52,7 +52,7 @@ The API enables users to manage their personal finances, including:
 
 2. **Install and open Docker Desktop**
    
-3. **In the terminal, paste the code to run the API server:**
+3. **In the project root, open the terminal and paste the following code to start the API server:"**
    ```bash
    docker run -p 3000:3000 api/wallet:v1.0
 
