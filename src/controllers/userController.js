@@ -9,7 +9,7 @@ export const cadastrarUsuario = async (req, res) =>{
 
   const usuarioExistente = await buscarUsuarioEmail(email)
   if (usuarioExistente) {
-    return res.status(400).json({erro: "email já cadastrado"})
+    return res.status(401).json({erro: "email já cadastrado"})
   }
 
   const senhaCriptografada = await bcrypt.hash(senha, 15)
@@ -22,7 +22,7 @@ export const loginUsuario = async (req,res) =>{
 
   const usuario = await buscarUsuarioEmail(email)
   if (!usuario || !(await bcrypt.compare(senha, usuario.senha))) {
-    return res.status(400).json({erro: "email ou senha incorretos"})
+    return res.status(401).json({erro: "email ou senha incorretos"})
   }
 
   const token = jwt.sign({id: usuario.id}, process.env.JWT_SECRET, {expiresIn: "1h"})

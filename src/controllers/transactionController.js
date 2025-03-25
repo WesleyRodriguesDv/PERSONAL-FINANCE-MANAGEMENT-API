@@ -12,7 +12,7 @@ export const adicionarTransacao = async (req, res) =>{
         const saldo = await obterSaldo (usuarioId)
         res.status(201).json({transacao, saldo})
     } catch(error) {
-        return res.status(400).json({erro: "Erro ao efetuar transação"})
+        return res.status(401).json({erro: "Erro ao efetuar transação"})
     }
 }
 
