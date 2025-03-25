@@ -35,7 +35,7 @@
                     }
                 },
                 "responses": {
-                    "400": {
+                    "401": {
                         "description": "Erro ao cadastrar usuário. Possíveis motivos: Email já cadastrado ou campos obrigatórios não preenchidos.",
                         "content": {
                             "application/json": {
@@ -98,7 +98,7 @@
                     }
                 },
                 "responses": {
-                    "400": {
+                    "401": {
                         "description": "Email ou senha incorretos",
                         "content": {
                             "application/json": {
