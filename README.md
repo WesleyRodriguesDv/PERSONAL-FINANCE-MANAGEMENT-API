@@ -41,40 +41,21 @@ The API enables users to manage their personal finances, including:
 ## 🔧 How to Run the Project
 
 ### **Pré-requisitos**
-- Node.js (v16 or later)
-- MongoDB (local or remote)
-- Prisma CLI
+- Docker Desktop 
 
 ### **Execution Steps**
 
-1. **Clone the repository:**:
+1. **Clone the repository:**
    ```bash
    git clone https://github.com/FinanceControlProject/Backend
    cd api-financeira
 
-2. **Install dependencies**
-   ```bash
-   npm install
+2. **Install and open Docker Desktop**
    
-3. **Set up the environment** <br>
-- Create a .env file in the project's root directory and add the environment variables
+3. **In the project root, open the terminal and paste the following code to start the API server:"**
    ```bash
-   DATABASE_URL="mongodb://localhost:27017/api-financeira"
-     JWT_SECRET="sua chave secreta"
-     PORT=3000
+   docker run -p 3000:3000 api/wallet:v1.0
 
-5. **Generate PrismaClient**
-   ```bash
-   npx prisma generate
-
-6. **Start the server**
-   ```bash
-   node src/server.js
-
-7. **Access the API**
-- The API will be available at:
-   ```bash
-   http://localhost:3000
 
 ---
 
