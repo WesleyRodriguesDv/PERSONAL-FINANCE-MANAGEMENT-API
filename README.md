@@ -56,7 +56,6 @@ The API enables users to manage their personal finances, including:
    ```bash
    docker run -p 3000:3000 api/wallet:v1.0
 
-
 ---
 
 ## Methods & Endpoints API
