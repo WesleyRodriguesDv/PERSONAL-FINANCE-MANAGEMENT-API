@@ -4,7 +4,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "vercel-build": "prisma generate",
+    "vercel-build": "npx prisma generate",
     "start": "node --watch src/app.js"
     
   },
