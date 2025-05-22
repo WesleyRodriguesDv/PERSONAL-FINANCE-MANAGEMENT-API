@@ -4,9 +4,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "vercel-build": "npx prisma generate",
-    "start": "node --watch src/app.js"
-    
+    "start": "node --watch src/app.js",
+    "vercel-build": "npx prisma generate"
   },
   "keywords": [],
   "author": "",
