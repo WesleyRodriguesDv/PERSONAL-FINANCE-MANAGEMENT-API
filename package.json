@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "node --watch src/server.js",
-    "vercel-build": "true"
+    "vercel-build": "prisma generate"
   },
   "keywords": [],
   "author": "",
