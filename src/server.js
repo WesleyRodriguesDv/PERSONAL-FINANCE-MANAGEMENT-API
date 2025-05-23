@@ -2,7 +2,7 @@ import app from "./app.js";
 import swaggerUi from "swagger-ui-express";
 import swaggerDocs from "./swagger.js"; // substitui o JSON
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3000;
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
