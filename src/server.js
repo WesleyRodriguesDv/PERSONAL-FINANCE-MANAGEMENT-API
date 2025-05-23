@@ -1,18 +1,12 @@
-import app from "./app";
+import app from "./app.js";
 import swaggerUi from "swagger-ui-express";
-import fs from "fs";
-import path from "path";
-import { fileURLToPath } from "url";
+import swaggerDocs from "./swagger.js"; // substitui o JSON
 
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-
-const swaggerDocsPath = path.join(__dirname, "../src/swagger.json");
-const swaggerDocs = JSON.parse(fs.readFileSync(swaggerDocsPath, "utf-8"));
-
+const PORT = process.env.PORT || 8080;
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
-export default app;
+app.listen(PORT, () => {
+  console.log(`Servidor rodando na porta ${PORT}`);
+  console.log(`Documentação disponível em: http://localhost:${PORT}/api-docs`);
+});
